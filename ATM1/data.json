@@ -1,0 +1,52 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "Ajay",
+            "email": "ajay@gmail.com",
+            "pin": "984345654",
+            "history": [],
+            "balance": 0
+        },
+        {
+            "id": 2,
+            "username": "dinesh",
+            "email": "dineshajay@gmail.com",
+            "pin": "64345678",
+            "history": [],
+            "balance": 0
+        },
+        {
+            "id": 3,
+            "username": "dinesh",
+            "email": "dinesh@gmail.com",
+            "pin": "87667098",
+            "history": [],
+            "balance": 0
+        },
+        {
+            "id": 4,
+            "username": "vijay",
+            "email": "vijay@gmail.cpm",
+            "pin": "653456",
+            "history": [],
+            "balance": 0
+        },
+        {
+            "id": 5,
+            "username": "dinesh",
+            "email": "dineshajay874@gmail.com",
+            "pin": "876543456",
+            "history": [],
+            "balance": 0
+        },
+        {
+            "id": 6,
+            "username": "dinesh",
+            "email": "dj@gmail.com",
+            "pin": "654567",
+            "history": [],
+            "balance": 0
+        }
+    ]
+}
