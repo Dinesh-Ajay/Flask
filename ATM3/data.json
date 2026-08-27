@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "Ajay",
+            "email": "dineshajay874@gmail.com",
+            "pin": "1057210",
+            "history": [],
+            "balance": 0
+        }
+    ]
+}
