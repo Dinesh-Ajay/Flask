@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "Ajay",
+            "email": "dineshajay874@gmail.com",
+            "pin": "1057210",
+            "history": [
+                "10000 deposited",
+                "5000 Withdraw",
+                "15000 deposited",
+                "10000 Withdraw",
+                "10000 deposited",
+                "1000 Withdraw"
+            ],
+            "balance": 109000
+        },
+        {
+            "id": 2,
+            "username": "Naresh",
+            "email": "nareshkille97@gmail.com",
+            "pin": "09876543212",
+            "history": [
+                "6969 deposited"
+            ],
+            "balance": 6969
+        }
+    ]
+}

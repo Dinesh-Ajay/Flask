@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Withdraw
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/css/base.css">
+{% endblock %}
+
+{% block content %}
+    <h1>Withdraw</h1>
+    <form method="post">
+        <label for="amount">Enter the amount to withdraw: </label>
+        <input type="text" name="amount">
+
+        <input type="submit" value="withdraw">
+
+    </form>
+
+{% if info %}    
+    <h3>{{info}}</h3>
+{% endif %}
+{% endblock %}

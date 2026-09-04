@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <h1>Welcome to the ATM</h1>
+
+    <h3>Hello {{session['username']}}</h3>
+
+    <div class="dashboard-links">
+
+        <a href="/checkBalance">
+            💰 Check Balance
+        </a>
+
+        <a href="/deposit">
+            💵 Deposit Money
+        </a>
+
+        <a href="/withdraw">
+            💳 Withdraw Money
+        </a>
+
+        <a href="/viewtransactions">
+            📋 View Transactions
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

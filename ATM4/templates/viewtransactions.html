@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+View Transactions
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/css/base.css">
+{% endblock %}
+
+{% block content %}
+    <h1>
+        View Transactions
+    </h1>
+
+    {% if history%}
+    
+    <table border=1>
+        <tr>
+            <th>
+                Transaction Id
+            </th>
+            <th>
+                Transaction Description
+            </th>
+        </tr>
+        {% for i in range(lenght) %}
+        <tr>
+            <td>
+            {{i+1}}
+        </td><td>
+            {{history[i]}}
+        </td></tr>
+        {%endfor %}
+        
+    </table>
+    {% else %}
+    <p>No Transaction history</p>
+
+    {% endif %}
+    <button name="download"></button>
+{% endblock %}
