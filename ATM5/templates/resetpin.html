@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Reset Pin
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/css/base.css">
+{% endblock %}
+
+{% block content %}
+    <h1>Reset Pin</h1>
+    <form method="post">
+        <label for="npin">Enter the new pin:</label>
+        <input type="password" name="npin">
+        <br><br>
+        <label for="cpin">Confirm the new pin:</label>
+        <input type="password" name="cpin">
+        <br><br>
+        <input type="submit" value="Update">
+    </form>
+{% if info %}    
+    <h3>{{info}}</h3>
+{% endif %}
+{% endblock %}

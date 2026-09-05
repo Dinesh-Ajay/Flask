@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title  %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        {% block extracss %} {% endblock %}
+    </head>
+    <body>
+        <nav>
+        {% if session.get("username") %}
+        <a href="/dashboard/{{session.get('username')}}">Home</a>
+        <a href="/logout">Logout</a>
+        {% else %}
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        {% endif %}
+        </nav>
+
+       {% block content  %}
+       {% endblock %}
+
+       <footer>
+         Copyrights@2026
+       </footer>
+    </body>
+</html>

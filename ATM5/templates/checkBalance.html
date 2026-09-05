@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+checkBalance
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/css/base.css">
+{% endblock %}
+
+{% block content %}
+    
+    <h1>Check Balance</h1>
+    <P> Hello {{user}}</P>
+    <p>Your current balance: ₹{{balance}}/-</p>
+{% endblock %}

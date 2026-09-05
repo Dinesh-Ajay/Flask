@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+OTP Verification
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/css/base.css">
+{% endblock %}
+
+{% block content %}
+    <h1>OTP Verification</h1>
+    <form method="post">
+        <label>Enter the OTP:</label>
+        <input type="text" name="otp">
+        <br><br>
+        <input type="submit" value="verify">
+    </form>
+{% if info %}    
+    <h3>{{info}}</h3>
+{% endif %}
+{% endblock %}

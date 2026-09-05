@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Forgot Pin
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/css/base.css">
+{% endblock %}
+
+{% block content %}
+    <h1>Forgot Pin</h1>
+    <form method="POST">
+    <label for="email">Enter the email:</label>
+    <input type="email" name="email">
+    <br><br>
+    <input type="submit" value="Reset">
+    </form><br>
+{% if info %}    
+    <h3>{{info}}</h3>
+{% endif %}
+
+{% endblock %}
