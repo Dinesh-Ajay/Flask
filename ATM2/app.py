@@ -14,7 +14,7 @@ def update_data(data):
     with open('data.json', 'w') as file:
         json.dump(data, file, indent=4)
 
-user="Ajay"
+user="DineshAjay"
 
 @app.route('/')
 def base():
