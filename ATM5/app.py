@@ -13,8 +13,6 @@ import io
 app=Flask(__name__)
 app.secret_key="ATM2"
 
-
-
 def get_data():
     with open('data.json', 'r') as file:
         data = json.load(file)
