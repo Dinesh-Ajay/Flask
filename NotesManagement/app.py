@@ -88,11 +88,32 @@ def logout():
     return redirect(url_for("login"))
 
 
-
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html")
+    if "user_id" in session:
+        user_id=session['user_id']
+        cursor=db.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM notes WHERE user_id=%s ORDER BY created_at DESC",(user_id,))
+        notes=cursor.fetchall()
+        cursor.close()
+        return render_template("dashboard.html",notes=notes)
+    return redirect(url_for('login'))
 
+@app.route('/editnote/<int:note_id>',methods=['GET','POST'])
+def edit_note(note_id):
+    if 'user_id' in session:
+        cursor=db.cursor(dictionary=True)
+        if request.method=='POST':
+            new_content=request.form.get('content')
+            cursor.execute("UPDATE notes SET content=%s WHERE id=%s AND user_id=%s",(new_content,note_id,session['user_id']))
+            db.commit()
+            return redirect(url_for('dashboard'))
+        cursor.execute("SELECT * FROM notes WHERE id=%s AND user_id=%s",(note_id,session['user_id']))
+        note=cursor.fetchone()
+        cursor.close()
+        if note:
+            return render_template('editnote.html',note=note)
+    return redirect(url_for('login'))
 
 if __name__ == "__main__":
     app.run(debug=True)
