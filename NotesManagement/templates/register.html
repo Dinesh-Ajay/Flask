@@ -1,37 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h1>Register to the NotesManagement</h1>
 
-    <form method="POST">
+{% block title %}
+Register | Notes Management
+{% endblock %}
 
-        <label for="uname">Username:</label>
-        <input type="text" name="uname">
-        <br><br>
 
-        <label for="email">Enter Email:</label>
-        <input type="email" name="email">
-        <br><br>
+{% block content %}
 
-        <label for="password">Enter password:</label>
-        <input type="password" name="password">
-        <br><br>
+<div class="page-container">
 
-        <input type="submit" value="Register">
+    <div class="card">
 
-    </form>
 
-    <p>
-        Already Registered?
-        <a href="/login">Login</a>
-    </p>
+        <!-- Logo -->
+        <div class="logo">
+            N
+        </div>
 
-</body>
-</html>
 
+        <!-- Heading -->
+        <h1>
+            Create Account
+        </h1>
+
+
+        <p class="subtitle">
+            Create your Notes Management account
+        </p>
+
+
+        <!-- Info Message -->
+        {% if info %}
+
+            <p class="info">
+                {{ info }}
+            </p>
+
+        {% endif %}
+
+
+        <!-- Register Form -->
+        <form
+            action="{{ url_for('register') }}"
+            method="POST"
+        >
+
+
+            <!-- Username -->
+            <div class="form-group">
+
+                <label for="uname">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="uname"
+                    name="uname"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a strong password"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Register Button -->
+            <button type="submit">
+
+                Create Account
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+        </form>
+
+
+        <!-- Login Section -->
+        <div class="login-section">
+
+            <p>
+                Already have an account?
+            </p>
+
+            <a href="{{ url_for('login') }}">
+
+                Login to your account
+
+                <span>
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}
