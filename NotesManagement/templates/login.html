@@ -1,24 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+{% extends 'base.html' %}
 
-</head>
-<body>
-    <H1>Login to the NotesManagement</H1>
-    <form method="POST">
-        <label>Enter the mail:</label>
-        <input type="email", name="email">
-        <br><br>
-        <label>Enter password:</label>
-        <input type="password", name="pin">
-        <br>
-        <input type="submit" value="Login"><br>
-        <p><br><a href="/forgotpassword">Forgot Password</a></p>
-        <p><br><a href="/register">Create an account</a></p>
-    </form>
-    {{info}}
-</body>
-</html>
+
+{% block title %}
+Login | Notes Management
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-container">
+
+    <div class="card">
+
+        <!-- Logo -->
+        <div class="logo">
+            N
+        </div>
+
+
+        <!-- Heading -->
+        <h1>
+            Welcome Back
+        </h1>
+
+
+        <p class="subtitle">
+            Login to your Notes Management account
+        </p>
+
+
+        <!-- Info Message -->
+        {% if info %}
+
+            <p class="info">
+                {{ info }}
+            </p>
+
+        {% endif %}
+
+
+        <!-- Login Form -->
+        <form
+            action="{{ url_for('login') }}"
+            method="POST"
+        >
+
+            <!-- Email -->
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Forgot Password -->
+            <div class="forgot-password">
+
+                <a href="{{ url_for('forgotpassword') }}">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+
+            <!-- Login Button -->
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+
+        <!-- Register -->
+        <div class="register-section">
+
+            <p>
+                Don't have an account?
+            </p>
+
+            <a href="{{ url_for('register') }}">
+                Create an account
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}
