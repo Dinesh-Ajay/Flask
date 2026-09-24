@@ -1,17 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-</head>
-<body>
-   <div class="dashboard-container">
+{% extends 'base.html' %}
 
-    <h1>Welcome to the ATM</h1>
 
-    <h3>Hello {{session['username']}}</h3>
+{% block title %}
+Dashboard | Notes Management
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-container">
+
+    <div class="dashboard-card">
+
+
+        <h1>
+            Dashboard
+        </h1>
+
+
+        {% if notes %}
+        {% for i in notes %}
+            <p> {{i['content']}}</p>
+            <a href="editnote/{{i['id']}}">Edit</a>
+            <a href="deletenote/{{i['id']}}">Delete</a>
+        {% endif %}
+        {% else %}
+        <p>No notes available</p>
+        {% endif %}
+
+        <br><br>
+        <form method="post" action="/createnote">
+            <label for="note">Create a new notes: </label><br>
+            <textarea name="note"></textarea>
+            <input type="submit">
+        </form>
 
     </div>
-</body>
-</html>
+    <div class="dashboard-card">
+    <h2>Edit Notes</h2>
+    <form method="POST">
+        <textarea name="content" required>{{note.content}}
+        </textarea>
+        <div>
+            <button type="submit">Save</button>
+            <a href="{{url_for('dashboard')}}">Cancel</a>
+        </div>
+    </form>
+    </div>
+
+</div>
+
+{% endblock %}
+
