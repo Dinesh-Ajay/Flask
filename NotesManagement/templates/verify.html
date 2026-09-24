@@ -1,11 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify</title>
-</head>
-<body>
-    <h3>verifyyyyyyyyyy</h3>
-</body>
-</html>
+{% extends 'base.html' %}
+
+
+{% block title %}
+Verify Account
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-container">
+
+    <div class="card">
+
+
+        <!-- Logo -->
+        <div class="logo">
+            ✓
+        </div>
+
+
+        <h1>
+            Verify Account
+        </h1>
+
+
+        <p class="subtitle">
+            Please verify your account to continue.
+        </p>
+
+
+        {% if info %}
+
+            <div class="info">
+                {{ info }}
+            </div>
+
+        {% endif %}
+
+
+        <div class="back-login">
+
+            <a href="{{ url_for('login') }}">
+                ← Back to Login
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}
